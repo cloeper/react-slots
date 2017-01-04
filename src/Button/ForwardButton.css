@@ -1,0 +1,20 @@
+.Button {
+  @mixin button;
+  text-transform: uppercase;
+  background-color: map(colors, primaryColor);
+  position: relative;
+  margin-right: map(buttons, wizardButtonArrowWidth);
+  color: map(colors, white);
+  justify-content: center;
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: -map(buttons, wizardButtonArrowWidth);
+    width: 0;
+    height: 0;
+    border-top: calc(map(typography, smallLineHeight) / 2) solid transparent;
+    border-bottom: calc(map(typography, smallLineHeight) / 2) solid transparent;
+    border-left: map(buttons, wizardButtonArrowWidth) solid map(colors, primaryColor);
+  }
+}

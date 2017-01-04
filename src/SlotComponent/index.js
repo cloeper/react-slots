@@ -44,6 +44,9 @@ export default class SlotComponent extends React.Component {
    */
   processSlots(props = this.props) {
     React.Children.map(props.children, (child) => {
+      if (!child) {
+        return;
+      }
       const hasSlotProp = child.props.hasOwnProperty('slot');
       const slotIsDefined = this.slots.hasOwnProperty(child.props.slot);
 

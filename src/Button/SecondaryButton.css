@@ -1,0 +1,7 @@
+.Button {
+  @mixin button;
+  text-transform: uppercase;
+  background-color: map(colors, secondaryCTAColor);
+  color: map(colors, white);
+  justify-content: center;
+}

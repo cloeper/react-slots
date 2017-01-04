@@ -1,0 +1,7 @@
+.ButtonBar {
+  padding: calc(map(layout, largeGutter));
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  background: map(colors, white);
+}

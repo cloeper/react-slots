@@ -40,7 +40,7 @@ class MySlottedComponent extends SlotComponent {
 
 Define slots iterates all children passed into the component and replaces any
 default components with the children that match both the slot name and
-component type. If none match, an error is thrown. If no children are passed,
+component type. If none match, an error is throw. If no children are passed,
 then it will render the default component you declared in `defineSlots`.
 
 `useSlot` is in charge of looking up the slot by name and returning the
@@ -122,15 +122,14 @@ import SlotComponent from 'domains/core/classes/SlotComponent/SlotComponent.js';
 class CoolComp extends SlotComponent {
   constructor(props) {
     super(props);
-    
-    const { label } = props;
-    
+
     this.defineSlots({
-      'Label': <label className={ styles.labelStyle }>{ label }</label>,
+      'Label': <label className={ styles.labelStyle }>{ props.label }</label>,
       'Icon': <SvgIcon icon='search' />,
     });
   }
   render() {
+    const { label } = this.props;
     return (
       <div>
         { this.useSlot('Label') }
@@ -158,7 +157,7 @@ class MyParentComp extends React.Component {
 }
 ```
 
-OMG so easy. Now you can essentially 'reach into the guts' of a component and
+OMG such easy. Now you can essentially 'reach into the guts' of a component and
 modify what you need to in any way you need to.
 
 NOTE: You don't have to use _every_ slot defined. You can use only the ones

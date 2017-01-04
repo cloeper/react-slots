@@ -2,14 +2,50 @@
   "name": "react-slots",
   "version": "1.0.0",
   "description": "Slotted components in react",
-  "main": "SlotComponent.js",
+  "main": "lib/common/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "env NODE_PATH=$NODE_PATH:$PWD/src env NODE_ENV=testing mocha --opts './mocha.opts' 'src/**/*.test.js'",
+    "build:commonjs": "env NODE_PATH=$NODE_PATH:$PWD/src env NODE_ENV=build-commonjs babel -d lib/commonjs src/SlotComponent",
+    "build:es6": "env NODE_PATH=$NODE_PATH:$PWD/src env NODE_ENV=build-es6 babel -d lib/es6 src/SlotComponent"
   },
+  "jsnext:main": "lib/es6/index.js",
   "author": "Chris Loeper",
+  "contributors": [
+    {
+      "name": "Edward Irby",
+      "email": "edward@castersblues.com"
+    }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/EdwardIrby/React-Slots.git"
   },
+  "dependencies": {
+    "react": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-check-es2015-constants": "^6.8.0",
+    "babel-plugin-dynamic-import-node": "^1.0.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-classes": "^6.18.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-export-extensions": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-es2016": "^6.16.0",
+    "babel-preset-es2017": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "classnames": "^2.2.5",
+    "css-modules-require-hook": "^4.0.5",
+    "expect": "^1.20.2",
+    "expect-jsx": "^3.0.0",
+    "mocha": "^3.2.0",
+    "react-addons-test-utils": "^15.4.1"
+  }
 }

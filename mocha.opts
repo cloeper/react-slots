@@ -1,0 +1,6 @@
+--require expect
+--require expect-jsx
+--require mochaSetup.js
+--require babel-register
+--ui tdd
+--timeout 5000

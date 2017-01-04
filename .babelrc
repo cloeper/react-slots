@@ -1,0 +1,40 @@
+{
+  "presets": ["es2016", "es2017", "react"],
+  "env": {
+    "development": {
+      "build-commonjs": {
+        "plugins": [
+          "check-es2015-constants",
+          "transform-es2015-modules-commonjs",
+          "transform-export-extensions",
+          "transform-class-properties",
+          "transform-object-rest-spread"
+        ],
+        "ignore": [
+          "**/*.test.js",
+          "**/*.stories.js"
+        ]
+      },
+      "build-es6": {
+        "plugins": [
+          "check-es2015-constants",
+          "transform-export-extensions",
+          "transform-class-properties",
+          "transform-object-rest-spread"
+        ],
+        "ignore": [
+          "**/*.test.js",
+          "**/*.stories.js"
+        ]
+      },
+      "testing": {
+        "presets": ["es2015","es2016", "es2017", "react"],
+        "plugins": [
+          "transform-export-extensions",
+          "transform-class-properties",
+          "transform-object-rest-spread"
+        ]
+      }
+    }
+  }
+}

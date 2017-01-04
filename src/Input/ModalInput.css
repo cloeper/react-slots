@@ -1,0 +1,60 @@
+.Input {
+  composes: Input from './Input.css';
+  border-width: 0;
+  border-radius: 0;
+  border-bottom: 1px solid map(colors, tertiaryCTABorder);
+  background: transparent;
+  &:hover {
+    background-color: map(colors, white);
+  }
+}
+
+.InputHasError {
+  composes: InputHasError from './Input.css';
+}
+
+.InputIsDisabled {
+  composes: Input;
+  border-color: map(colors, tertiaryCTADim);
+  pointer-events: none;
+  cursor: default;
+}
+
+.InputField {
+  composes: InputField from './Input.css';
+  &:focus { /* Need todo */ }
+}
+
+.InputFieldDisabled {
+  composes: InputFieldDisabled from './Input.css';
+}
+
+.ErrorMessage {
+  composes: ErrorMessage from './Input.css';
+}
+
+.InputIcon {
+  composes: InputIcon from './Input.css';
+  fill: map(colors, primaryColor);
+}
+
+.InputIconDisabled {
+  composes: InputIconDisabled from './Input.css';
+}
+
+.InputAsterisk {
+  composes: InputAsterisk from './Input.css';
+}
+
+.InputAsteriskError {
+  composes: InputAsteriskError from './Input.css';
+}
+
+.InputAsteriskDisabled {
+  composes: InputAsteriskDisabled from './Input.css';
+}
+
+.InputFieldError {
+  composes: FieldError from 'components/FieldError/FieldError.css';
+  margin-top: -map(layout, mediumGutter);
+}

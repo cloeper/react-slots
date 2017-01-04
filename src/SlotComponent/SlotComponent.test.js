@@ -1,14 +1,14 @@
 import React from 'react';
-import 'testUtils/windowSetup.js';
+
 import expect from 'expect';
-import expectJSX from 'expect-jsx';
-import SlotComponent from './SlotComponent.js';
+
+import SlotComponent from './index.js';
 import TestUtils from 'react-addons-test-utils';
 
-import Input from 'components/Input/Input.js';
-import PrimaryButton from 'components/Button/Button.js';
+import Input from '../Input/Input.js';
+import PrimaryButton from '../Button/Button.js';
 
-expect.extend(expectJSX);
+
 suite('SlotComponent', () => {
   class MockSlotComp extends SlotComponent {
     constructor(props) {

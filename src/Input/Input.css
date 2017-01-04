@@ -1,0 +1,75 @@
+.Input {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 map(layout, smallGutter);
+  border: 1px solid map(colors, tertiaryCTABorder);
+  border-radius: map(layout, borderRadius);
+  background: map(colors, white);
+  height: map(inputs, inputHeight);
+}
+
+.InputHasError {
+  composes: Input;
+}
+
+.InputIsDisabled {
+  composes: Input;
+  border-color: map(colors, tertiaryCTADim);
+  pointer-events: none;
+  cursor: default;
+}
+
+.InputField {
+  flex: 1;
+  width: 100%;
+  line-height: 1;
+  box-sizing: border-box;
+  font-size: map(typography, smallFontSize);
+  background: transparent;
+  text-align: inherit;
+  &:focus {
+    /* TO DO */
+  }
+}
+
+.InputFieldDisabled {
+  composes: InputField;
+  &::placeholder {
+    color: map(colors, tertiaryCTADim);
+  }
+}
+
+.InputErrorMessage {
+  /* To DO */
+}
+
+.InputIcon {
+  width: map(icons, smallIcon);
+  height: map(icons, smallIcon);
+  fill: map(colors, primaryCTAColor);
+  margin-right: map(layout, smallGutter);
+}
+
+.InputIconDisabled {
+  composes: InputIcon;
+  fill: map(colors, tertiaryCTADim);
+}
+
+.InputAsterisk {
+  margin-right: map(layout, smallGutter);
+}
+
+.InputAsteriskError {
+  composes: InputAsterisk;
+  color: map(colors, scarlet);
+}
+
+.InputAsteriskDisabled {
+  composes: InputAsterisk;
+  color: map(colors, tertiaryCTADim);
+}
+
+.InputFieldError {
+  composes: FieldError from 'components/FieldError/FieldError.css';
+  margin-top: -map(layout, mediumGutter);
+}
